@@ -16,6 +16,7 @@ Bonus 2 (opzionale)
 Modificare la classe Movie in modo che accetti piú di un genere.*/
 include __DIR__ . '/db.php';
 
+var_dump($movies);
 ?>
 
 <!DOCTYPE html>
@@ -46,18 +47,15 @@ include __DIR__ . '/db.php';
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <?php foreach($movies as $movie) : ?>
+                        <td><?= $movie[$title]?></td>
+                        <?php endforeach ?>
                     </tr>
                 </tbody>
             </table>
 
         </div>
     </div>
-    <script src='https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js'></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </body>
 
 </html>
