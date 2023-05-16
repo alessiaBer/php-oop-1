@@ -1,19 +1,9 @@
 <?php 
 
-include __DIR__ . '/Models/Movie.php';
-include __DIR__ . '/Models/Genre.php';
+include_once __DIR__ . '/Models/Movie.php';
+include_once __DIR__ . '/Models/Genre.php';
 
 /** TODO isRatedR */
-
-$movies = [
-    new Movie('Spirited Away', 'Japanese', $genres["action"]),
-    new Movie('The Ninth Gate', 'English', $thriller),
-    new Movie('Twin Peaks', 'English', $mystery),
-    new Movie('Interstellar', 'English',$sciFi),
-    new Movie('Blade Runner', 'English', $sciFi),
-    new Movie('Old Boy', 'Korean', $thriller)
-];
-
 $genres = [
     "action" => new Genre('Action'),
     "adventure" => new Genre('Adventure'),
@@ -24,4 +14,13 @@ $genres = [
     "mystery" => new Genre('Mystery'),
     "sciFi" => new Genre('Science Fiction'),
     "thriller" => new Genre('Thriller')
+];
+
+$movies = [
+    new Movie('Spirited Away', 'Japanese', $genres["action"]),
+    new Movie('The Ninth Gate', 'English', $genres["thriller"]),
+    new Movie('Twin Peaks', 'English', $genres["mystery"]),
+    new Movie('Interstellar', 'English',$genres["sciFi"]),
+    new Movie('Blade Runner', 'English', $genres["sciFi"]),
+    new Movie('Old Boy', 'Korean', $genres["thriller"])
 ];

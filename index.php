@@ -14,7 +14,7 @@ Possiamo ad esempio organizzare il codice:
 -organizzando il layout dividendo la struttura ed i contenuti in file e parziali dedicati.
 Bonus 2 (opzionale)
 Modificare la classe Movie in modo che accetti piú di un genere.*/
-include __DIR__ . '/db.php';
+include_once __DIR__ . '/db.php';
 
 var_dump($movies);
 ?>
@@ -48,7 +48,7 @@ var_dump($movies);
                 <tbody>
                     <tr>
                         <?php foreach($movies as $movie) : ?>
-                        <td><?= $movie[$title]?></td>
+                        <td><?= $movie["title"]?></td>
                         <?php endforeach ?>
                     </tr>
                 </tbody>
