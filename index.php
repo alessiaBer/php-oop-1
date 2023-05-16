@@ -46,11 +46,18 @@ var_dump($movies);
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach($movies as $movie) : ?>
                     <tr>
-                        <?php foreach($movies as $movie) : ?>
-                        <td><?= $movie["title"]?></td>
-                        <?php endforeach ?>
+                        <td><?= $movie->title?></td>
+                        <td><?= $movie->language?></td>
+                        <td><?= $movie->genre->name?></td>
+                        <?php if ($movie->isRatedR === true) :?>
+                            <td>Yes</td>
+                        <?php else : ?>
+                        <td>No</td>
+                        <?php endif ?>
                     </tr>
+                    <?php endforeach ?>
                 </tbody>
             </table>
 
